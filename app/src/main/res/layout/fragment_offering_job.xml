@@ -1,0 +1,171 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:textAlignment="center"
+    android:textDirection="inherit"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/job_offering"
+        android:layout_width="292dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="40dp"
+        android:text="JOB OFFERING"
+        android:textAlignment="viewStart"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.282"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/job_title"
+        android:layout_width="0dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="45dp"
+        android:background="@android:color/transparent"
+        android:drawablePadding="12dp"
+        android:hint="Job Title"
+        android:imeOptions="actionSearch"
+        android:inputType="text"
+        android:paddingStart="16dp"
+        android:paddingLeft="16dp"
+        android:paddingEnd="16dp"
+        android:paddingRight="16dp"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textColorHint="#565353"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/description"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/job_offering"
+        tools:ignore="DuplicateIds" />
+
+    <EditText
+        android:id="@+id/description"
+        android:layout_width="315dp"
+        android:layout_height="92dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="45dp"
+        android:background="@drawable/search_box"
+        android:drawablePadding="12dp"
+        android:hint="Description"
+        android:imeOptions="actionSearch"
+        android:inputType="text"
+        android:paddingStart="16dp"
+        android:paddingLeft="16dp"
+        android:paddingEnd="16dp"
+        android:paddingRight="16dp"
+        android:textColor="@color/black"
+        android:textColorHint="#999999"
+        app:layout_constraintBottom_toTopOf="@+id/pick_location_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/job_title" />
+
+
+    <Button
+        android:id="@+id/pick_location_button"
+        android:layout_width="0dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="45dp"
+        android:layout_marginBottom="23dp"
+        android:background="@drawable/search_box"
+        android:gravity="center_vertical|start"
+        android:paddingStart="16dp"
+        android:paddingLeft="16dp"
+        android:paddingEnd="16dp"
+        android:paddingRight="16dp"
+        android:text="Pick location on map"
+        android:textAlignment="viewStart"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toTopOf="@+id/price_container"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/description" />
+
+    <LinearLayout
+        android:id="@+id/price_container"
+        android:layout_width="0dp"
+        android:layout_height="69dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginEnd="45dp"
+        android:layout_marginBottom="174dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.555"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pick_location_button">
+
+        <TextView
+            android:id="@+id/RM"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="RM"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="50sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/price"
+            android:layout_width="0dp"
+            android:layout_height="57dp"
+            android:layout_weight="1"
+            android:background="@drawable/search_box"
+            android:drawablePadding="12dp"
+            android:hint="0.00"
+            android:imeOptions="actionSearch"
+            android:inputType="numberDecimal"
+            android:paddingStart="16dp"
+            android:paddingLeft="16dp"
+            android:paddingEnd="16dp"
+            android:paddingRight="16dp"
+            android:textColor="@color/black"
+            android:textColorHint="#999999" />
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/post_button"
+        android:layout_width="123dp"
+        android:layout_height="62dp"
+        android:layout_marginStart="240dp"
+        android:layout_marginTop="38dp"
+        android:backgroundTint="#ff6648"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:text="POST"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/price_container" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

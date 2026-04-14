@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_gradient"
+    tools:context=".Profile">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/ProfilePictureUser"
+            android:layout_width="111dp"
+            android:layout_height="111dp"
+            android:layout_marginStart="151dp"
+            android:layout_marginTop="124dp"
+            android:layout_marginEnd="151dp"
+            android:layout_marginBottom="76dp"
+            android:background="@drawable/circle_bg"
+
+            android:scaleType="centerCrop"
+             app:layout_constraintBottom_toTopOf="@+id/Name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:clipToOutline="true"/>
+
+        <EditText
+            android:id="@+id/Name"
+            android:layout_width="300dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="64dp"
+            android:layout_marginEnd="100dp"
+            android:background="@drawable/username"
+            android:drawableEnd="@drawable/edit_icon"
+            android:ems="10"
+            android:inputType="text"
+            android:paddingStart="20dp"
+            android:paddingEnd="12dp"
+            android:text="Name"
+            android:textColor="#9D7C7C"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.525"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ProfilePictureUser" />
+
+        <EditText
+            android:id="@+id/Username"
+            android:layout_width="300dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="100dp"
+            android:background="@drawable/username"
+            android:drawableEnd="@drawable/edit_icon"
+            android:ems="10"
+            android:inputType="text"
+            android:padding="0dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="12dp"
+            android:text="Username"
+
+            android:textColor="#9D7C7C"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.505"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Name" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/Review"
+            android:layout_width="160dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="159dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="162dp"
+            android:text="REVIEW"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            app:backgroundTint="#FE6647"
+            app:cornerRadius="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.485"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Username" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

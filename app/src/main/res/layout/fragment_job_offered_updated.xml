@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Background -->
+    <View android:layout_width="0dp" android:layout_height="0dp"
+        android:background="@drawable/bg_gradient"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Title -->
+
+    <!-- Back Button -->
+
+    <!-- FIXED Legend -->
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="196dp"
+        android:text="Job Offered"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="56dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="336dp"
+        android:contentDescription="&quot;back&quot;"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/back_button" />
+
+    <LinearLayout
+        android:id="@+id/legend"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="76dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton">
+
+        <View
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="#57D759" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:text="Finish"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="#F0E280" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:text="On-going"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="#D14336" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:text="Available"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- PERFECT ScrollView -->
+    <ScrollView
+        android:id="@+id/scroll_jobs"
+        android:layout_width="356dp"
+        android:layout_height="570dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="32dp"
+        android:fillViewport="true"
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/legend">
+
+        <LinearLayout
+            android:id="@+id/jobs_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="16dp"
+            android:paddingBottom="32dp">
+
+            <!-- 25 job items for perfect scrolling test -->
+            <include layout="@layout/item_job" />
+
+            <include layout="@layout/item_job" />
+
+            <include layout="@layout/item_job" />
+
+            <include layout="@layout/item_job" />
+
+            <include layout="@layout/item_job" />
+
+            <include layout="@layout/item_job" />
+
+            <include layout="@layout/item_job" />
+
+            <include layout="@layout/item_job" />
+
+            <include layout="@layout/item_job" />
+
+            <include layout="@layout/item_job" />
+
+            <include layout="@layout/item_job" />
+
+            <include layout="@layout/item_job" />
+
+            <include layout="@layout/item_job" />
+
+            <include layout="@layout/item_job" />
+
+            <include layout="@layout/item_job" />
+
+            <include layout="@layout/item_job" />
+
+            <include layout="@layout/item_job" />
+
+            <include layout="@layout/item_job" />
+
+            <include layout="@layout/item_job" />
+
+            <include layout="@layout/item_job" />
+
+            <include layout="@layout/item_job" />
+
+            <include layout="@layout/item_job" />
+
+            <include layout="@layout/item_job" />
+
+            <include layout="@layout/item_job" />
+
+            <include layout="@layout/item_job" />
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

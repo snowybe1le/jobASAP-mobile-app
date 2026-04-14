@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:startDestination="@id/start">
+
+
+    <fragment
+        android:id="@+id/destHome"
+        android:name="com.example.mobileapp.HomeFragment"
+        android:label="Home">
+
+        <action
+            android:id="@+id/action_to_FindJob"
+            app:destination="@id/findJobFragment" />
+
+    <action
+        android:id="@+id/action_to_offerJob"
+        app:destination="@id/destOfferJob" />
+
+        <!-- NEW action to JobDetailFragment -->
+        <action
+            android:id="@+id/action_home_to_jobDetail"
+            app:destination="@id/jobDetailFragment" />
+
+    </fragment>
+
+
+
+
+    <fragment
+        android:id="@+id/jobAcceptedFragment"
+        android:name="com.example.mobileapp.JobAccepted"
+        android:label="Job Accepted" />
+
+    <action
+        android:id="@+id/action_jobDetail_to_jobAccepted"
+        app:destination="@id/jobAcceptedFragment" />
+
+
+
+    <fragment
+        android:id="@+id/destJobOffered"
+        android:name="com.example.mobileapp.JobOfferedUpdated"
+        android:label="Job Offered">
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.example.mobileapp.SignUpFragment"
+        android:label="Sign Up">
+        <action
+            android:id="@+id/action_signUp_to_signIn"
+            app:destination="@id/signInFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/signInFragment"
+        android:name="com.example.mobileapp.SignInFragment"
+        android:label="Sign In">
+        <action
+            android:id="@+id/action_signIn_to_signUp"
+            app:destination="@id/signUpFragment" />
+
+        <action
+            android:id="@+id/action_signIn_to_home"
+            app:destination="@id/destHome"
+            app:popUpTo="@id/start"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/destOfferJob"
+        android:name="com.example.mobileapp.JobOfferingFragment"
+        android:label="Total Commission" />
+
+
+    <fragment
+        android:id="@+id/destTotalCommission"
+        android:name="com.example.mobileapp.totalcommission"
+        android:label="Total Commission" />
+
+    <fragment
+        android:id="@+id/reviewListFragment"
+        android:name="com.example.mobileapp.ReviewListFragment"
+        android:label="Reviews">
+
+        <argument
+            android:name="reviewedUserId"
+            app:argType="string" />
+
+        <action
+            android:id="@+id/action_reviewListFragment_to_addReviewFragment"
+            app:destination="@id/addReviewFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/addReviewFragment"
+        android:name="com.example.mobileapp.AddReviewFragment"
+        android:label="addReviews"/>
+
+    <fragment
+        android:id="@+id/destProfile"
+        android:name="com.example.mobileapp.Profile"
+        android:label="Profile" >
+
+        <action
+            android:id="@+id/action_to_jobOffered"
+            app:destination="@id/destJobOffered" />
+
+        <action
+            android:id="@+id/action_to_jobAccepted"
+            app:destination="@id/jobAcceptedFragment" />
+
+        <!-- moved review action inside destProfile -->
+        <action
+            android:id="@+id/action_profile_to_reviewList"
+            app:destination="@id/reviewListFragment" />
+
+    </fragment>
+
+    <!-- other user profile fragment -->
+    <fragment
+        android:id="@+id/otherUserProfileFragment"
+        android:name="com.example.mobileapp.OtherUserProfileFragment"
+        android:label="User Profile">
+
+        <!-- action to chat with this user -->
+        <action
+            android:id="@+id/action_profile_to_chat"
+            app:destination="@id/user_message" />
+
+        <argument
+            android:name="userId"
+            app:argType="string" />
+
+        <action
+            android:id="@+id/action_otherUserProfile_to_reviewListFragment"
+            app:destination="@id/reviewListFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/user_message"
+        android:name="com.example.mobileapp.ChatFragment"
+        android:label="UserMessage" />
+
+    <!-- add action in jobDetailFragment to navigate to other user's profile -->
+    <fragment
+        android:id="@+id/jobDetailFragment"
+        android:name="com.example.mobileapp.JobDetailFragment"
+        android:label="Job Detail" >
+
+        <action
+            android:id="@+id/action_jobDetail_to_otherUserProfileFragment"
+            app:destination="@id/otherUserProfileFragment" />
+
+        <action
+            android:id="@+id/action_jobDetail_to_jobAccepted"
+            app:destination="@id/jobAcceptedFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/findJob"
+        android:name="com.example.mobileapp.FindJob"
+        android:label="Find Job">
+
+
+        <!-- navigate to HomeFragment -->
+        <action
+            android:id="@+id/action_findJob_to_homeFragment"
+            app:destination="@id/destHome" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_message"
+        android:name="com.example.mobileapp.ChatListFragment"
+        android:label="Message">
+
+    <action
+        android:id="@+id/action_chatListFragment_to_chatFragment"
+        app:destination="@id/user_message" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/findJobFragment"
+        android:name="com.example.mobileapp.FindJob"
+        android:label="Find Job" >
+        <action
+            android:id="@+id/action_findJob_to_jobMap"
+            app:destination="@id/jobMapFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/jobMapFragment"
+        android:name="com.example.mobileapp.JobMapFragment"
+        android:label="Job Map" >
+        <argument
+            android:name="location"
+            app:argType="string"
+            android:defaultValue="nearby jobs" />
+
+        <action
+            android:id="@+id/action_jobMap_to_jobDetail"
+            app:destination="@id/jobDetailFragment" />
+
+    </fragment>
+
+
+
+    <fragment
+        android:id="@+id/nav_setting"
+        android:name="com.example.mobileapp.Settings"
+        android:label="Setting">
+    <action
+        android:id="@+id/action_settings_to_signInFragment"
+        app:destination="@id/signInFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/start"
+        android:name="com.example.mobileapp.Start">
+
+        <action
+            android:id="@+id/action_start_to_signup"
+            app:destination="@id/signUpFragment" />
+
+        <action
+            android:id="@+id/action_start_to_login"
+            app:destination="@id/signInFragment" />
+    </fragment>
+
+</navigation>
